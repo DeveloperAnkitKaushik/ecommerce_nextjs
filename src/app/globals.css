@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #3cb371;
+    --litegray: #ededed;
+    --gray: #a9acab;
+    --heading: rgb(26, 31, 42);
+}
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+html,
+body {
+    font-family: "DM Sans", sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    position: relative;
+}
+
+.text-gradient {
+    background: linear-gradient(79deg, #2b0aff, #ff5b8a 49%, #ff5b8a 55%, #fba64b 77%, #f99b52);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+.maincontainer {
+    width: 100%;
+    max-width: 1536px;
+    margin: 0 auto;
+    padding: 1rem 5%;
+}
+
+@media(max-width: 1536px) {
+    .maincontainer {
+        max-width: 1366px;
+    }
+}
+
+@media(max-width: 1366px) {
+    .maincontainer {
+        max-width: 1280px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .maincontainer {
+        max-width: 1024px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .maincontainer {
+        max-width: 900px;
+    }
+}
+
+@media(max-width: 768px) {
+    .maincontainer {
+        max-width: 700px;
+    }
+}
+
+.space{
+    margin-top: 4rem;
+}
+
+.defaultimg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

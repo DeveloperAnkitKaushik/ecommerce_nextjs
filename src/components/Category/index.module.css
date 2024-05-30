@@ -1,0 +1,96 @@
+.container{
+    margin: 5rem 0;
+}
+
+.innercontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.firstlayer{
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+.imgcontainer1,
+.imgcontainer2{
+    position: relative;
+}
+
+
+.imgcontainer1 .img{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.imgcontainer2 .img{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.firstlayer .imgcontainer1{
+    width: 70%;
+    height: 20rem;
+}
+
+.firstlayer .imgcontainer2{
+    width: 30%;
+    height: 20rem;
+}
+
+.secondlayer{
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+.secondlayer .imgcontainer1{
+    width: 50%;
+    height: 20rem;
+}
+
+.secondlayer .imgcontainer2{
+    width: 50%;
+    height: 20rem;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.btn{
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    padding: 0.5rem 2rem;
+    background-color: white;
+    border-radius: 10rem;
+    color: var(--heading);
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn:hover{
+    background-color: var(--primary);
+    color: white;
+}
+
+@media(max-width: 768px) {
+    .firstlayer,
+    .secondlayer{
+        gap: 1rem;
+    }
+    
+    .firstlayer .imgcontainer1{
+        width: 50%;
+        height: 20rem;
+    }
+    
+    .firstlayer .imgcontainer2{
+        width: 50%;
+        height: 20rem;
+    }
+}
