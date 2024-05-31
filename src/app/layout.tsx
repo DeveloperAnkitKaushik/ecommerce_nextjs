@@ -22,6 +22,7 @@ export default function RootLayout({
         <Navbar />
         <div className="space"></div>
         {children}
+        <Footer />
       </body>
     </html>
   );
