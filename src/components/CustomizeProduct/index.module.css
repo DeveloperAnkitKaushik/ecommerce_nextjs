@@ -1,0 +1,81 @@
+.container {
+    margin-top: 2rem;
+}
+
+.optionContainer {
+    display: flex;
+    gap: 0.7rem;
+    margin-bottom: 1.3rem;
+}
+
+.color,
+.btn {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.color {
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    border: 1px solid var(--gray);
+}
+
+.colorSelected::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease;
+}
+
+.colorDisabled {
+    cursor: not-allowed;
+}
+
+.colorDisabled::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2px;
+    background-color: var(--primary);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.btn {
+    padding: 0.2rem 0.6rem;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.btnActive {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btnDisabled {
+    background-color: #7cd0a2;
+    color: rgb(246, 246, 246);
+    border: 2px solid #7cd0a2;
+    cursor: not-allowed;
+}
+
+
+
+@media (max-width: 450px) {
+    .qtyContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

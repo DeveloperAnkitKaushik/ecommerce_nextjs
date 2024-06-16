@@ -1,0 +1,64 @@
+.qtyContainer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.quantityContainer {
+    display: flex;
+    align-items: center;
+}
+
+.minus,
+.plus,
+.number {
+    padding: 0.5rem;
+    background-color: rgb(238, 238, 238);
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minus {
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    padding-left: 1rem;
+    cursor: pointer;
+}
+
+.plus {
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+.number{
+    padding: 0.5rem 1rem;
+}
+
+.stockInfo {
+    margin-left: 1rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+}
+
+.stockInfo b {
+    color: var(--primary);
+}
+
+.button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}

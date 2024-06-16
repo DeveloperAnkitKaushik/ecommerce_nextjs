@@ -71,6 +71,7 @@
     color: var(--heading);
     font-weight: bold;
     transition: all 0.3s;
+    border: 1px solid var(--primary);
 }
 
 .btn:hover{

@@ -5,7 +5,6 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import { MdOutlineStackedLineChart } from "react-icons/md";
 import { GiCrossedBones } from "react-icons/gi";
-import Image from "next/image";
 import Navicons from "./Navicons/Navicons";
 
 const Navbar = () => {

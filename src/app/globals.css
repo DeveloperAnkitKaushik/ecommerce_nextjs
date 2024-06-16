@@ -16,6 +16,7 @@
     --litegray: #ededed;
     --gray: #a9acab;
     --heading: rgb(26, 31, 42);
+    --liteblack: rgb(105, 105, 105);
 }
 
 .montserrat {
@@ -94,4 +95,20 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+input:hover,
+select:hover,
+select:focus,
+input:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.loadingccontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
 }

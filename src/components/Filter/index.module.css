@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
+    justify-content:center;
+}
+
+.filterItem {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background-color: #ededed;
+    font-size: 0.9rem;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filterItem:hover {
+    background-color: #f1f1f1;
+}

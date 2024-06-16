@@ -8,10 +8,20 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Navicons = () => {
     const [cartOpen, setCartOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
+    const router = useRouter();
+
+    const handleSearchKeyDown = (e:any) => {
+        if (e.key === 'Enter') {
+            router.push(`/list?name=${searchQuery}`);
+            setSearchOpen(false);
+        }
+    };
 
     return (
         <div className={styles.container}>
@@ -39,7 +49,7 @@ const Navicons = () => {
                                     <IoCloseSharp onClick={() => setCartOpen(false)} />
                                 </div>
                                 <div className={styles.cartsubhead}>
-                                    <img src='/loading.gif' />
+                                    <img src='/loading.gif' alt='Loading' />
                                     <h1>Congratulations! Your order qualifies for free shipping</h1>
                                 </div>
                                 <div className={styles.scroll}>
@@ -92,9 +102,18 @@ const Navicons = () => {
                             exit={{ y: "-100%" }}
                             transition={{ duration: 0.3 }}
                         >
-                            <div className={styles.searchheader}>
-                                <input type="text" placeholder="Search..." className={styles.searchinput} />
-                                <IoCloseSharp onClick={() => setSearchOpen(false)} className={styles.searchclose} />
+                            <div className="maincontainer">
+                                <div className={styles.searchheader}>
+                                    <input
+                                        type="text"
+                                        placeholder="Search..."
+                                        className={styles.searchinput}
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                        onKeyDown={handleSearchKeyDown}
+                                    />
+                                    <IoCloseSharp onClick={() => setSearchOpen(false)} className={styles.searchclose} />
+                                </div>
                             </div>
                         </motion.div>
                     </>
@@ -107,7 +126,7 @@ const Navicons = () => {
                 <div className={styles.cartitemnumber}>2</div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Navicons;
