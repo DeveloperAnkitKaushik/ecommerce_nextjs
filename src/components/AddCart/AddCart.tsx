@@ -51,7 +51,7 @@ const AddCart = ({
             <h1>
               Only <b>{stockNumber} items left!</b>
             </h1>
-            <h1>Don't Miss it</h1>
+            <h1>Dont Miss it</h1>
           </div>
         ) : (null)}
       </div>
