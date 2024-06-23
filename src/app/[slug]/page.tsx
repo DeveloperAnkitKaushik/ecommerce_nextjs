@@ -10,6 +10,7 @@ import { wixClientServer } from '@/libs/wixClientServer';
 import { notFound } from 'next/navigation';
 import AddCart from '@/components/AddCart/AddCart';
 import ProductImagesSkeleton from '@/components/SkeletonBlocks/ProductImages/ProductImages';
+import DOMPurify from 'isomorphic-dompurify';
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const wixClient = await wixClientServer();
@@ -21,6 +22,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
 
   const product = productinfo.items[0];
 
+
   return (
     <div className={styles.container}>
       <div className="maincontainer">
@@ -30,7 +32,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
           </Suspense>
           <div className={styles.content}>
             <div className={styles.heading}>{product.name}</div>
-            <div className={styles.para}>{product.description}</div>
+            <div className={styles.para} dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(product.description || '')}}></div>
             <div className={styles.rating}>
               <FaStar />
               <FaStar />
@@ -42,7 +44,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
             {
               product.price?.price === product.price?.discountedPrice ? (
                 <div className={styles.pricecontainer}>
-                  <div className={styles.normalprice}><s>{product.price?.formatted?.price}</s></div>
+                  <div className={styles.discountprice}>{product.price?.formatted?.price}</div>
                 </div>
               ) : (
                 <div className={styles.pricecontainer}>
@@ -63,7 +65,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
                 product.additionalInfoSections?.map((section: any) => (
                   <div key={section.title}>
                     <div className={styles.infoheading}>{section.title}</div>
-                    <div className={styles.info}>{section.description}</div>
+                    <div className={styles.info} dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(section.description || '')}}></div>
                   </div>
                 ))
               }

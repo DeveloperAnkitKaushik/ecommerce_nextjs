@@ -112,3 +112,16 @@ input:focus {
     height: 80vh;
     width: 100%;
 }
+
+.notfoundcontainer{
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.notfoundcontainer img{
+    width: 30rem;
+}

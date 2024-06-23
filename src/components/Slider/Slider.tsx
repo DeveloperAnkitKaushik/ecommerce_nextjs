@@ -2,30 +2,28 @@
 
 import { useCallback, useEffect, useState } from "react";
 import styles from "./index.module.css";
-import Link from "next/link";
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from "framer-motion";
-import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import Autoplay from 'embla-carousel-autoplay';
 
 const slides = [
   {
     id: 1,
-    title: "Summer Sale Collections",
+    title: "Winter Sale Collections",
     description: "Sale! Up to 50% off!",
-    img1: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800",
-    img2: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=800",
-    img3: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img1: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfDF8MHx8fDI%3D",
+    img2: "https://images.unsplash.com/photo-1507553532144-b9df5e38c8d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxmYXNoaW9ufGVufDB8MHwwfHx8Mg%3D%3D",
+    img3: "https://images.unsplash.com/photo-1562151270-c7d22ceb586a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGZhc2hpb258ZW58MHwxfDB8fHwy",
     url: "/",
     bg: "bg-gradient-to-r from-yellow-50 to-pink-50",
   },
   {
     id: 2,
-    title: "Winter Sale Collections",
+    title: "Summer Sale Collections",
     description: "Sale! Up to 50% off!",
-    img1: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=800",
-    img2: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800",
-    img3: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img1: "https://images.unsplash.com/photo-1550614000-4895a10e1bfd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZhc2hpb258ZW58MHwxfDB8fHwy",
+    img2: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmFzaGlvbnxlbnwwfDB8MHx8fDI%3D",
+    img3: "https://images.unsplash.com/photo-1566206091558-7f218b696731?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGZhc2hpb258ZW58MHwxfDB8fHwy",
     url: "/",
     bg: "bg-gradient-to-r from-pink-50 to-blue-50",
   },
@@ -33,9 +31,9 @@ const slides = [
     id: 3,
     title: "Spring Sale Collections",
     description: "Sale! Up to 50% off!",
-    img1: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800",
-    img2: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=800",
-    img3: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img1: "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZhc2hpb258ZW58MHwxfDB8fHwy",
+    img2: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmFzaGlvbnxlbnwwfDB8MHx8fDI%3D",
+    img3: "https://images.unsplash.com/photo-1507015264727-8e0a4e8d3f8d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU1fHxmYXNoaW9ufGVufDB8MHwwfHx8Mg%3D%3D",
     url: "/",
     bg: "bg-gradient-to-r from-blue-50 to-yellow-50",
   },

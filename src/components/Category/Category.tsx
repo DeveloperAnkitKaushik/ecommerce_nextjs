@@ -1,11 +1,7 @@
 import React from 'react';
 import styles from "./index.module.css";
-import { wixClientServer } from '@/libs/wixClientServer';
-import { products } from '@wix/stores';
 
 const Category = async() => {
-    const wixClient = await wixClientServer();
-    const res = await wixClient.collections.queryCollections().find();
     let img = 'https://images.pexels.com/photos/1667088/pexels-photo-1667088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
     return (
         <div className={styles.container}>
