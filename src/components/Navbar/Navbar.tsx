@@ -18,9 +18,9 @@ const Navbar = () => {
         <div className={`${styles.innercontainer} maincontainer`}>
           <nav className={`${styles.links} ${isMenuOpen ? `${styles.menuOpen} ${styles.animationOpen}` : ""}`}>
             <Link href="/" className={styles.link}>Shop</Link>
-            <a href="https://ankit-kaushik.web.app/" className={styles.link} target="_blank">Deals</a>
-            <a href="https://github.com/DeveloperAnkitKaushik" className={styles.link} target="_blank">About</a>
-            <a href="https://github.com/DeveloperAnkitKaushik" className={styles.link} target="_blank">Contact</a>
+            <a href="/list" className={styles.link} target="_blank">Deals</a>
+            <a href="https://kaushikankit.vercel.app/" className={styles.link} target="_blank">About</a>
+            <a href="https://www.linkedin.com/in/ankitkaushik/" className={styles.link} target="_blank">Contact</a>
           </nav>
           <Link href="/" className={styles.imagecontainer}><img src="/logo.png" alt="" className={styles.logo} /></Link>
           <Navicons/>
