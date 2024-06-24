@@ -207,11 +207,11 @@ const Navicons = () => {
                   </div>
                   <div className={styles.profilegreeting}>{greeting}</div>
                   <div className={styles.useremail}>{user?.email}</div>
-                  <LogoutLink className={styles.profilebtn} postLogoutRedirectURL='/'>Logout</LogoutLink>
+                  <LogoutLink className={styles.profilebtn}>Logout</LogoutLink>
                 </div>
               ) : (
                 <div className={styles.profilelogin}>
-                  <LoginLink className={styles.profilebtn} postLoginRedirectURL='/'>
+                  <LoginLink className={styles.profilebtn}>
                     Signup/Login
                   </LoginLink>
                 </div>
